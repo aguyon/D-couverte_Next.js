@@ -16,15 +16,18 @@ export default function AddVocabulary() {
             fr: frWord.current.value,
         };
 
-        fetch('https://next-js-discovery.vercel.app/api/vocapi', {
+        fetch("https://next-js-discovery.vercel.app/api/vocapi", {
             method: 'POST',
             body: JSON.stringify(newWord),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS"
             }
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => resolve(data ? JSON.parse(data) : {}))
+            .catch(error => reject(error))
 
         enWord.current.value = "";
         frWord.current.value = "";

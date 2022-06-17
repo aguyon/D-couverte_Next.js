@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import { formatContent } from '../../utils/utils';
 
+const FORMAT_CATEGORIES = {
+    words: 'mot',
+    adjectives: 'adjectif',
+    verbs: 'verbe'
+};
+
 export default function Vocabulary(props) {
     const [state, setState] = useState(false);
 
@@ -36,7 +42,7 @@ export default function Vocabulary(props) {
                                 </h5>
                                 <Link href={`/vocabulary/${item.name}/add`}>
                                     <button className="btn btn-primary">
-                                        Ajouter un mot
+                                        Ajouter un {FORMAT_CATEGORIES[item.name]}
                                     </button>
                                 </Link>
                             </div>
