@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Projet personnel pour découvrir Next.js
 - Routing
-- Optimisation avec Next (Head, Images)
+- Optimisation SEO (Head, Images)
 - Gestion du rendu des pages et des données
 - Création d'une API
 - Déploiement avec Vercel
